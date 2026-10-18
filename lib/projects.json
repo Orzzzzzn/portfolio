@@ -1,7 +1,7 @@
 [    {
         "title": "Early ICU Sepsis Prediction with SEPSIS SENTINEL MODEL",
         "year": "2026",
-        "url": "https://kyxz1813.github.io/DSC180B-website/",
+        "url": "https://orzzzzzn.github.io/portfolio/",
         "image": "images/sepsis.png",
         "description": "An ICU-hour–level early warning system developed on MIMIC-IV to predict sepsis onset 1–4 hours in advance."
       },
@@ -23,7 +23,7 @@
     {
         "title": "Mouse Circadian Rhythm Analysis",
         "year": "2025",
-        "url": "https://kyxz1813.github.io/Mouse-Circadian-Rhythm-Analysis/",
+        "url": "https://orzzzzzn.github.io/Mouse-Circadian-Rhythm-Analysis/",
         "image": "images/mouse.png",
         "description": "An interactive data visualization that deploys a radial graph to explore the circadian rhythms of mice, aiming to answer two key questions: What is the relationship between temperature and activity? How does gender influence this relationship?"
       },
@@ -31,7 +31,7 @@
         "title": "Bikewatching",
         "year": "2025",
         "image": "images/bikewatching.png",
-        "url": "https://kyxz1813.github.io/bikewatching/",
+        "url": "https://orzzzzzn.github.io/bikewatching/",
         "description": "An immersive, interactive map visualization of bike traffic in the Boston area during different times of the day."
     },
     {
