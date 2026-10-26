@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sepsis Sentinel research poster, project website, and one-page PDF in a readable, accessible format.">
+  <meta name="theme-color" content="#ada5d6">
+  <title>Sepsis Sentinel — Yuxuan Zhou</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="inner-page">
+  <main class="page-main sepsis-page" id="main-content">
+    <header class="page-heading">
+      <a class="text-link" href="./">← All projects</a>
+      <p class="eyebrow">DSC 180B · Clinical machine learning · 2026</p>
+      <h1 class="page-title">Sepsis Sentinel.</h1>
+      <p class="page-description">Early ICU sepsis prediction using MIMIC-IV data, hourly patient measurements, and multimorbidity context.</p>
+      <div class="button-row">
+        <a class="button" href="https://orzzzzzn.github.io/DSC180B-website/" target="_blank" rel="noopener noreferrer">Visit project website ↗</a>
+        <a class="button secondary" href="../pdf/DSC180B_Poster.pdf" target="_blank" rel="noopener noreferrer" type="application/pdf">Open poster PDF ↗</a>
+        <a class="button secondary" href="../pdf/DSC180B_Poster.pdf" download="DSC180B_Poster.pdf" type="application/pdf">Download PDF ↓</a>
+      </div>
+    </header>
+
+    <section class="poster-section" aria-labelledby="poster-heading">
+      <div class="document-heading"><div><p class="eyebrow">Research poster · 1 PDF page</p><h2 id="poster-heading">Read the full poster</h2></div><a class="text-link" href="../pdf/DSC180B_Poster.pdf" target="_blank" rel="noopener noreferrer">Open full size ↗</a></div>
+      <figure class="sepsis-poster">
+        <a href="../pdf/DSC180B_Poster.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the complete one-page research poster PDF in a new tab">
+          <img src="../images/sepsis-poster.jpg" alt="Sepsis Sentinel research poster with MIMIC-IV cohort, hourly features, multimorbidity subgroups, random forest pipeline, and reported performance metrics" width="2200" height="1650" fetchpriority="high" onerror="this.onerror=null;this.src='../images/sepsis.png'">
+        </a>
+        <figcaption>Complete DSC 180B research poster (one page). Select the poster to open the original PDF at full size.</figcaption>
+      </figure>
+      <div class="document-reader">
+        <div class="document-reader-top"><strong>PDF reader</strong><span>Use the PDF controls to zoom, print, or save.</span></div>
+        <iframe title="Sepsis Sentinel original DSC180B poster PDF" src="../pdf/DSC180B_Poster.pdf#toolbar=1&amp;navpanes=0" loading="lazy"></iframe>
+        <p class="reader-fallback">If the embedded PDF is unavailable in your browser, <a href="../pdf/DSC180B_Poster.pdf" target="_blank" rel="noopener noreferrer">open the full PDF in a new tab</a> or <a href="../pdf/DSC180B_Poster.pdf" download="DSC180B_Poster.pdf">download it</a>.</p>
+      </div>
+    </section>
+
+    <section class="surface sepsis-overview" aria-labelledby="project-overview">
+      <h2 id="project-overview">Project overview</h2>
+      <p>We developed an ICU-hour-level early warning model using MIMIC-IV clinical data to forecast sepsis onset within a 1–4 hour window. The approach combines hourly measurements with latent multimorbidity phenotypes to capture differences between patients.</p>
+      <p>The poster describes a pipeline of SQL cohort extraction, hourly feature engineering, patient-grouped train/test splitting, preprocessing, and a 500-tree random forest classifier. The model prioritizes sensitivity to reduce missed cases.</p>
+      <dl class="sepsis-stats">
+        <div><dt>ICU stays</dt><dd>26k</dd></div>
+        <div><dt>Hourly records</dt><dd>940k</dd></div>
+        <div><dt>Prediction window</dt><dd>1–4 hours</dd></div>
+        <div><dt>Sensitivity</dt><dd>94%</dd></div>
+        <div><dt>Specificity</dt><dd>44%</dd></div>
+      </dl>
+      <p class="sepsis-note">Figures are reported in the supplied poster; they do not establish clinical validation for real-world deployment.</p>
+    </section>
+  </main>
+  <footer class="site-footer"></footer>
+  <script type="module" src="../global.js"></script>
+</body>
+</html>

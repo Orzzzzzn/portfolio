@@ -1,0 +1,96 @@
+/* Page-specific layout; shared typography and navigation live in ../style.css. */
+.about-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  align-items: center;
+  gap: 88px;
+}
+.about-intro-text .page-title { margin-bottom: 28px; }
+.about-bio { max-width: 660px; font-size: 20px; line-height: 1.5; color: var(--muted); }
+.about-bio p + p { margin-top: 18px; }
+.about-intro-text .button-row { margin-top: 30px; }
+.about-portrait-frame { padding: 12px 12px 15px; border-radius: 20px; background: #f9f8fc; transform: rotate(2deg); box-shadow: 0 9px 24px rgb(36 26 62 / 10%); }
+.about-portrait-frame img { width: 100%; aspect-ratio: 4 / 5; height: auto; object-fit: cover; object-position: 53% 45%; border-radius: 11px; }
+.about-portrait-frame figcaption { margin-top: 12px; text-align: center; font-size: 15px; }
+
+.about-mos { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); align-items: center; gap: 42px; margin-top: 88px; padding: 40px; border-radius: 24px; background: #f7f6fb; }
+.about-mos-copy h2 { font-size: clamp(38px, 4vw, 54px); line-height: 1.08; letter-spacing: -1.6px; margin-bottom: 22px; }
+.about-mos-copy > p:not(.eyebrow) { max-width: 285px; color: var(--muted); font-size: 19px; line-height: 1.5; }
+.about-paw { width: 61px; height: 61px; margin-top: 28px; color: #9382bf; transform: rotate(-12deg); }
+.about-mos-photos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: start; }
+.about-mos-photos figure:nth-child(2) { padding-top: 30px; }
+.about-mos-photos img { width: 100%; aspect-ratio: 4 / 5; height: auto; object-fit: cover; object-position: center; border-radius: 14px; }
+.about-mos-photos figcaption { padding-top: 11px; font-size: 13px; color: #696273; }
+
+.about-interests { margin-top: 80px; }
+.about-section-title { margin-bottom: 28px; }
+.about-section-title h2 { font-size: 40px; line-height: 1.12; letter-spacing: -1.2px; }
+.about-section-title .eyebrow { margin-bottom: 12px; }
+.about-interest-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; align-items: stretch; }
+.about-interest-card { display: flex; flex-direction: column; padding: 28px; min-width: 0; border-radius: 20px; background: #fff; box-shadow: 0 5px 12px rgb(36 26 62 / 5%); }
+.about-interest-icon { display: flex; align-items: center; justify-content: center; width: 62px; height: 62px; border-radius: 18px; margin-bottom: 28px; }
+.about-game-icon { background: #e6edcb; }
+.about-musical-icon { background: #eee7f8; }
+.about-golf-icon { background: #dcf0e9; }
+.about-interest-icon svg { width: 37px; height: 37px; }
+.about-interest-card h3 { margin-bottom: 12px; font-size: 27px; letter-spacing: -.7px; line-height: 1.2; }
+.about-interest-card > p:not(.interest-category) { color: var(--card-muted); font-size: 17px; line-height: 1.55; }
+.about-section-description { max-width: 680px; margin-top: 14px; font-size: 18px; line-height: 1.5; color: var(--muted); }
+.about-interest-card .interest-category { color: #726987; margin-bottom: 11px; font-size: 12px; line-height: 1.5; font-weight: 700; letter-spacing: .10em; }
+.about-interest-pick { display: flex; flex-direction: column; gap: 8px; margin-top: auto; padding: 22px 18px 18px; border-radius: 15px; background: #f4f4ec; }
+.musical-card .about-interest-pick { background: #f2edf9; }
+.golf-card .about-interest-pick { background: #edf7f2; }
+.about-interest-card > p:not(.interest-category) { margin-bottom: 26px; }
+.about-interest-pick .pick-label { font-size: 11px; line-height: 1.3; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; color: #67606c; }
+.about-interest-pick strong { font-size: 23px; line-height: 1.18; letter-spacing: -.7px; }
+.about-interest-pick > span:last-child { color: #625d69; font-size: 14px; line-height: 1.48; }
+.about-recommendation { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-top: 32px; margin-top: 50px; border-top: 1px solid var(--line); }
+.about-recommendation h2 { margin-bottom: 8px; font-size: 26px; letter-spacing: -.55px; line-height: 1.2; }
+.about-recommendation p { color: var(--muted); font-size: 17px; }
+.about-recommendation > a { white-space: nowrap; font-size: 17px; }
+.about-recommendation > a span { margin-left: 8px; }
+
+@media (max-width: 1099px) {
+  .about-intro-grid { grid-template-columns: minmax(0, 1fr) 240px; gap: 48px; }
+  .about-bio { font-size: 19px; }
+  .about-mos { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 30px; padding: 30px; }
+  .about-mos-photos { gap: 13px; }
+}
+@media (max-width: 800px) {
+  .about-intro-grid { grid-template-columns: minmax(0, 1fr) 210px; gap: 28px; align-items: start; }
+  .about-intro-grid .page-title { font-size: 47px; }
+  .about-portrait-frame { margin-top: 42px; }
+  .about-mos { grid-template-columns: 1fr; gap: 24px; margin-top: 64px; }
+  .about-mos-copy > p:not(.eyebrow) { max-width: 490px; }
+  .about-paw { display: none; }
+  .about-mos-photos { gap: 20px; }
+  .about-mos-photos img { aspect-ratio: 1 / 1; }
+  .about-mos-photos figure:nth-child(2) { padding-top: 0; }
+  .about-interests { margin-top: 60px; }
+  .about-interest-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .about-interest-card:last-child { grid-column: 1 / -1; }
+  .about-interest-card { padding: 27px; }
+  .about-recommendation { align-items: flex-start; }
+}
+@media (max-width: 560px) {
+  .about-intro-grid { grid-template-columns: 1fr; gap: 36px; }
+  .about-intro-grid .page-title { font-size: 46px; letter-spacing: -1.7px; }
+  .about-bio { font-size: 18px; }
+  .about-portrait-frame { width: min(76%, 270px); margin: 0 auto; transform: rotate(2deg); }
+  .about-portrait-frame img { aspect-ratio: 1 / 1; }
+  .about-mos { margin-top: 58px; padding: 26px 22px; border-radius: 19px; }
+  .about-mos-copy h2 { font-size: 42px; margin-bottom: 16px; }
+  .about-mos-copy > p:not(.eyebrow) { font-size: 18px; }
+  .about-mos-photos { gap: 14px; }
+  .about-mos-photos img { aspect-ratio: 3 / 4; border-radius: 10px; }
+  .about-mos-photos figcaption { font-size: 12px; line-height: 1.4; }
+  .about-section-title h2 { font-size: 33px; letter-spacing: -.9px; }
+  .about-interest-grid { grid-template-columns: 1fr; gap: 20px; }
+  .about-interest-card:last-child { grid-column: auto; }
+  .about-interest-card { padding: 27px; }
+  .about-interest-icon { margin-bottom: 22px; }
+  .about-interest-card h3 { font-size: 27px; }
+  .about-interest-card > p:not(.interest-category) { font-size: 18px; }
+  .about-recommendation { flex-direction: column; gap: 19px; margin-top: 36px; padding-top: 28px; }
+  .about-recommendation h2 { font-size: 24px; }
+}

@@ -1,157 +1,159 @@
-console.log('IT’S ALIVE!');
-console.log(location.host);
-console.log(location.pathname);
+// Resolve from this module so links work at / and a GitHub Pages /portfolio/ path.
+const siteRoot = new URL('./', import.meta.url);
+const siteURL = (path = '') => new URL(path, siteRoot);
+const currentPath = location.pathname.replace(/index\.html$/, '');
 
-function $$(selector, context = document) {
-  return Array.from(context.querySelectorAll(selector));
-}
-
-let navLinks = $$("nav a")
-
-// let currentLink = navLinks.find(
-//     (a) => a.host === location.host && a.pathname === location.pathname
-//   );
-//   if (currentLink) {
-//     // or if (currentLink !== undefined)
-//     currentLink?.classList.add('current');
-// }
-
-
-
-let pages = [
-    { url: '', title: 'Home' },
-    { url: 'projects/', title: 'Projects' },
-    { url: 'contact/', title: 'Contact'},
-    { url: 'cv/', title: 'CV'},
-    { url: 'https://github.com/kyxz1813', title: 'GitHub'}
-  ];
-
-let nav = document.createElement('nav');
-document.body.prepend(nav);
-
-for (let p of pages) {
-    let url = p.url;
-    let title = p.title;
-    // TODO create link and add it to nav
-    const ARE_WE_HOME = document.documentElement.classList.contains('home');
-    url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
-    let a = document.createElement('a');
-    a.href = url;
-    a.textContent = title;
-    if (a.host === location.host && a.pathname === location.pathname) {
-      a.classList.add('current');
-    a.classList.toggle(
-      'current',
-      a.host === location.host && a.pathname === location.pathname
-    );
-    }
-    nav.append(a);
+const navigation = document.createElement('nav');
+navigation.className = 'site-nav';
+navigation.setAttribute('aria-label', 'Main navigation');
+const pages = [
+  { path: '', label: 'Home' },
+  { path: 'projects/', label: 'Projects' },
+  { path: 'about/', label: 'About Me' },
+  { path: 'cv/', label: 'CV' },
+  { path: 'https://github.com/kyxz1813', label: 'GitHub', external: true },
+];
+for (const page of pages) {
+  const link = document.createElement('a');
+  link.href = siteURL(page.path).href;
+  link.textContent = page.label;
+  if (page.external) {
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.setAttribute('aria-label', 'GitHub (opens in a new tab)');
+  } else if (page.path === ''
+    ? currentPath === siteRoot.pathname
+    : currentPath.startsWith(siteURL(page.path).pathname)) {
+    link.classList.add('current');
+    link.setAttribute('aria-current', 'page');
   }
-
-
-// let currentLink = navLinks.find(
-//     (a) => a.host === location.host && a.pathname === location.pathname
-//   );
-//   if (currentLink) {
-//     // or if (currentLink !== undefined)
-//     currentLink?.classList.add('current');
-// }
-
-
-
-document.body.insertAdjacentHTML(
-  'afterbegin',
-  `
-  <label class="color-scheme">
-    Theme:
-    <select>
-      <!-- TODO add <option> elements here -->
-      matchMedia("(prefers-color-scheme: dark)").matches
-      <option value="light dark">Automatic</option>
-      <option value="light">Light</option>
-      <option value="dark">Dark</option>
-    </select>
-  </label>`
-);
-if  ("colorScheme" in localStorage){
-  document.documentElement.style.setProperty('color-scheme', localStorage.colorScheme);
-  localStorage.colorScheme = localStorage.colorScheme
+  navigation.append(link);
 }
+let skipLink = document.querySelector('.skip-link');
+const mainContent = document.querySelector('main[id]');
+if (!skipLink && mainContent) {
+  skipLink = document.createElement('a');
+  skipLink.className = 'skip-link';
+  skipLink.href = `#${mainContent.id}`;
+  skipLink.textContent = 'Skip to content';
+  document.body.prepend(skipLink);
+}
+if (skipLink) skipLink.after(navigation);
+else document.body.prepend(navigation);
 
-let select = document.querySelector('.color-scheme')
-select.addEventListener('input', function (event) {
-  console.log('color scheme changed to', event.target.value);
-  document.documentElement.style.setProperty('color-scheme', event.target.value);
-  localStorage.colorScheme = event.target.value
+const footer = document.querySelector('.site-footer');
+if (footer) {
+  const name = document.createElement('a');
+  name.href = siteRoot.href;
+  name.className = 'footer-name';
+  name.textContent = 'Yuxuan (Kate) Zhou';
+  const links = document.createElement('div');
+  links.className = 'footer-links';
+  for (const [label, path] of [['Get in touch', 'contact/'], ['Back to top ↑', '#']]) {
+    const link = document.createElement('a');
+    link.textContent = label;
+    link.href = path === '#' ? '#' : siteURL(path).href;
+    links.append(link);
+  }
+  footer.append(name, links);
+}
+document.querySelectorAll('[data-print]').forEach(button => {
+  button.addEventListener('click', () => window.print());
 });
 
-// for (let [name, value] of data) {
-//   // TODO build URL parameters here
-//   console.log(name, value);
-// }
-
-// fetch your project data
 export async function fetchJSON(url) {
-  try {
-      // Fetch the JSON file from the given URL
-      const response = await fetch(url);
-      console.log(response)
-      if (!response.ok) {
-        throw new Error(`Failed to fetch projects: ${response.statusText}`);
-      }
-    // console.log(response)
-    const data = await response.json();
-    return data; 
-  } catch (error) {
-      console.error('Error fetching or parsing JSON data:', error);
-  }
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`Request failed (${response.status}).`);
+  return response.json();
 }
 
-// export function renderProjects(project, containerElement) {
-//   // Your code will go here
-//   containerElement.innerHTML = '';
-//   for (let project of projects) {
-//     const article = document.createElement('article');
-//     article.innerHTML = `
-//     <h3>${project.title}</h3>
-//     <img src="${project.image}" alt="${project.title}">
-//     <p>${project.description}</p>
-//     `;
-//     containerElement.appendChild(article);
-//   }
-// }
-// replace the upper renderProjects function with the following
-export function renderProjects(projects, containerElement, headingLevel = 'h2') {
-  // write javascript that will allow dynamic heading levels based on previous function
-  if (typeof containerElement === null) {
-    throw new Error('Invalid container element');
-  }
-
-  let validHeadingLevels = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
-  if (!validHeadingLevels.includes(headingLevel)) {
-    headingLevel = 'h2'
-    throw new Error('Invalid heading level');
-  }
-  containerElement.innerHTML = '';
-  for (let project of projects) {
-    console.log("2${project.image}");
+export function renderProjects(projects, container, headingLevel = 'h2') {
+  if (!container) throw new Error('A project container is required.');
+  if (!/^h[1-6]$/.test(headingLevel)) throw new Error('Invalid heading level.');
+  const fragment = document.createDocumentFragment();
+  for (const project of projects) {
     const article = document.createElement('article');
-    article.innerHTML = `
-    <${headingLevel}>
-      <a href="${project.url}" target="_blank">${project.title}</a>
-    </${headingLevel}>
-    <img src="${project.image}" alt="${project.title}">
-    <p>${project.description}</p>
-    <div>Year: ${project.year}</div>
-    `;
-    containerElement.appendChild(article);
+    article.className = 'project-card';
+    const destination = siteURL(project.url);
+    const external = destination.origin !== location.origin;
+    const mediaLink = document.createElement('a');
+    mediaLink.className = 'project-image-link';
+    mediaLink.href = destination.href;
+    mediaLink.tabIndex = -1;
+    mediaLink.setAttribute('aria-hidden', 'true');
+    const image = document.createElement('img');
+    image.src = siteURL(project.image).href;
+    image.alt = '';
+    image.loading = 'lazy';
+    image.decoding = 'async';
+    image.width = 720;
+    image.height = 480;
+    mediaLink.append(image);
+
+    const content = document.createElement('div');
+    content.className = 'project-card-content';
+    const heading = document.createElement(headingLevel);
+    const titleLink = document.createElement('a');
+    titleLink.href = destination.href;
+    titleLink.textContent = project.displayTitle || project.title;
+    titleLink.title = project.title;
+    if (external) {
+      for (const link of [mediaLink, titleLink]) {
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+      }
+      const hint = document.createElement('span');
+      hint.className = 'sr-only';
+      hint.textContent = ' (opens in a new tab)';
+      titleLink.append(hint);
+    }
+    heading.append(titleLink);
+    const description = document.createElement('p');
+    description.textContent = project.summary || project.description;
+    const meta = document.createElement('div');
+    meta.className = 'project-meta';
+    const year = document.createElement('span');
+    year.textContent = `Year: ${project.year}`;
+    const arrow = document.createElement('span');
+    arrow.className = 'project-arrow';
+    arrow.setAttribute('aria-hidden', 'true');
+    arrow.textContent = external ? '↗' : '→';
+    meta.append(year, arrow);
+    content.append(heading, description);
+    if (project.websiteUrl) {
+      const websiteLink = document.createElement('a');
+      websiteLink.className = 'project-poster-link';
+      websiteLink.href = project.websiteUrl;
+      websiteLink.target = '_blank';
+      websiteLink.rel = 'noopener noreferrer';
+      websiteLink.textContent = 'Visit project website ↗';
+      content.append(websiteLink);
+    }
+    if (project.posterUrl) {
+      const posterLink = document.createElement('a');
+      posterLink.className = 'project-poster-link';
+      posterLink.href = siteURL(project.posterUrl).href;
+      posterLink.textContent = project.posterLabel || 'View poster and details →';
+      posterLink.target = '_blank';
+      posterLink.rel = 'noopener noreferrer';
+      posterLink.setAttribute('aria-label', `${project.posterLabel || 'View poster and details'} for ${project.displayTitle || project.title} (opens in a new tab)`);
+      content.append(posterLink);
+    }
+    content.append(meta);
+    article.append(mediaLink, content);
+    fragment.append(article);
   }
+  container.replaceChildren(fragment);
 }
 
-export async function fetchGitHubData(username) {
-  // return statement here
-  console.log('fetched username')
-  return fetchJSON(`https://api.github.com/users/${username}`);
+export function showProjectError(container) {
+  const message = document.createElement('p');
+  message.className = 'empty-state';
+  message.textContent = 'The projects could not be loaded. Please refresh the page to try again.';
+  container.replaceChildren(message);
 }
 
-
+// Retained for existing pages that use this helper.
+export function fetchGitHubData(username) {
+  return fetchJSON(`https://api.github.com/users/${encodeURIComponent(username)}`);
+}

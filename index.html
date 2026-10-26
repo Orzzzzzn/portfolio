@@ -1,48 +1,43 @@
 <!DOCTYPE html>
 <html lang="en" class="home">
-
 <head>
-    <link rel="stylesheet" href="style.css" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mos: Personal site and portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meet Yuxuan (Kate) Zhou, a Computer Science master's student at USC exploring data science, healthcare, and interactive visualization.">
+  <meta name="theme-color" content="#ada5d6">
+  <link rel="stylesheet" href="style.css">
+  <title>Yuxuan (Kate) Zhou — Portfolio</title>
 </head>
-
-<body>
-    <!-- <nav>
-        <ul>
-            <li><a class="current" href="index.html">Home</a></li>
-            <li><a href="../portfolio/projects/index.html">Projects</a></li>
-            <li><a href="../portfolio/contact/index.html">Contact</a></li>
-            <li><a href="../portfolio/cv/index.html">CV</a></li>
-            <li><a href="https://github.com/kyxz1813" target="_blank">Profile</a></li>
-        </ul>
-    </nav> -->
-    <h1>Yuxuan Zhou</h1>  
-    <p1 class="intro"> 
-        Hi, I am Yuxuan (Kate) Zhou, a fourth-year student at University of California San Diego, double majoring in Data Science
-        and Mathematics-Applied Science, and minoring in General Biology. 
-    </p1>
-    <br>
-    <div class="face">
-        <img src = "images/mos.jpeg" alt="Cat Mos" class="image" width="302" height="403">
-        <figcaption>My Cat: Mos</figcaption>
-        <div class="middle">
-            <div class="text"><a href="https://en.wikipedia.org/wiki/Siamese_cat">My Cat: Mos</a></div>
+<body class="home-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main">
+    <section class="introduction" aria-labelledby="intro-title">
+      <h1 id="intro-title" class="hero-heading" aria-label="Hi, I am Yuxuan (Kate) Zhou. Want to know more about me today?">
+        <span class="hero-line">Hi, I am Yuxuan (Kate) Zhou.</span>
+        <span class="hero-line">Want to know more about me today?</span>
+      </h1>
+      <div class="about-section">
+        <figure class="about-photo">
+          <img src="images/portrait3.jpeg" alt="Yuxuan (Kate) Zhou outdoors beneath the trees" width="3708" height="2730" fetchpriority="high">
+        </figure>
+        <div class="about-copy">
+          <h2>A little introduction</h2>
+          <p>I’m a Computer Science master’s student at USC, with a background in Data Science and Biology from UC San Diego.</p>
+          <a class="intro-about-link" href="about/">More about me <span aria-hidden="true">↗</span></a>
         </div>
-    </div>
-
-    <br><br>
-
-    <h2>Latest Projects</h2>
-    <div class="projects">
-        <!-- Dynamically added content will appear here -->
-    </div>
-    <br>
-    <div id="profile-stats">
-        
-    </div>
-    <script type="module" src="global.js"></script>
-    <script src="index.js" type="module" defer></script>
+      </div>
+    </section>
+    <section id="recent-work" class="recent-work" aria-labelledby="recent-title">
+      <div class="section-heading">
+        <h2 id="recent-title">Recent Works</h2>
+        <a class="all-projects-link" href="projects/">All projects <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="projects home-projects" aria-label="Recent projects" aria-busy="true"></div>
+      <noscript><p class="noscript-note">Browse the <a href="projects/sepsis.html">Sepsis Sentinel</a> and <a href="projects/multimorbidity.html">multimorbidity</a> project overviews. Enable JavaScript to see all project cards.</p></noscript>
+    </section>
+  </main>
+  <footer class="site-footer"></footer>
+  <script type="module" src="global.js"></script>
+  <script type="module" src="index.js"></script>
 </body>
 </html>
