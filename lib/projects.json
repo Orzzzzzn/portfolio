@@ -1,58 +1,78 @@
-[    {
-        "title": "Early ICU Sepsis Prediction with SEPSIS SENTINEL MODEL",
-        "year": "2026",
-        "url": "https://orzzzzzn.github.io/portfolio/",
-        "image": "images/sepsis.png",
-        "description": "An ICU-hour–level early warning system developed on MIMIC-IV to predict sepsis onset 1–4 hours in advance."
-      },
-    {
-        "title": "Analyzing Multimorbidity Patterns & Sepsis Outcomes in Critical Care",
-        "year": "2025",
-        "url": "projects/multimorbidity.html",
-        "pdf": "../pdf/Analyzing Multimorbidity Patterns & Sepsis Outcomes in Critical Care.pdf",
-        "image": "images/multimorbidity.png",
-        "description": "A report of replication study by applying latent class analysis to the MIMIC-III dataset, confirming the presence of distinct multimorbidity subgroups in ICU patients. These subgroups show clear differences in sepsis risk and clinical severity, highlighting their value for improving risk stratification in critical care."
-      },
-    {
-        "title": "Schrodinger's Mice - Interactive Data Visualization",
-        "year": "2025",
-        "url": "https://jefferson8868.github.io/Schrodinger-s-Mice/",
-        "image": "images/animation.GIF",
-        "description": "An interactive data visualization that explores the circadian rhythms of mice. Generate hyponthetical mouse movement within the unobserved box to represent possible trajectories."
-      },
-    {
-        "title": "Mouse Circadian Rhythm Analysis",
-        "year": "2025",
-        "url": "https://orzzzzzn.github.io/Mouse-Circadian-Rhythm-Analysis/",
-        "image": "images/mouse.png",
-        "description": "An interactive data visualization that deploys a radial graph to explore the circadian rhythms of mice, aiming to answer two key questions: What is the relationship between temperature and activity? How does gender influence this relationship?"
-      },
-    {
-        "title": "Bikewatching",
-        "year": "2025",
-        "image": "images/bikewatching.png",
-        "url": "https://orzzzzzn.github.io/bikewatching/",
-        "description": "An immersive, interactive map visualization of bike traffic in the Boston area during different times of the day."
-    },
-    {
-        "title": "Amazon Product Reviews Dataset Analysis",
-        "year": "2024",
-        "url": "https://docs.google.com/document/d/1rIhhnQYCZioL1QtNduhDfBJ-hzKJjzW6NMwtGGLronM/edit?usp=sharing",
-        "image": "images/amazon.png",
-        "description": "We used the Amazon Product Reviews (Amazon_Fashion category) 2023 dataset to create a machine learning model to predict product rateings, using features like, review text, helpfulness votes, item descriptions."
-    },
-    {
-        "title": "Recipe Nutrition VS. Preparation Time & Steps",
-        "year": "2024",
-        "url": "https://ziyaozzz.github.io/dsc80_project4_html/",
-        "image": "images/dsc80.png",
-        "description": "This data science project for DSC80 at UCSD investigates the correlation between a recipe's rating and the percentage of total calories in the recipe that come from sugar."
-    },
-    {
-        "title": "Entertainment Design Portfolio",
-        "year": "2021",
-        "url": "https://docs.google.com/presentation/d/1aOYY8te7mVEtG-aEhGc90klSydSXL1MpAuayYUIOeCM/edit?usp=sharing",
-        "image": "images/portfolio_cover.png",
-        "description": "Digital design portfolio that consists of multiple character designs, environment designs, prop designs, and transportation designs under the same fantastical world view."
-    }
+[
+  {
+    "title": "Early ICU Sepsis Prediction with SEPSIS SENTINEL MODEL",
+    "year": "2026",
+    "url": "https://orzzzzzn.github.io/DSC180B-website/",
+    "image": "images/sepsis.png",
+    "description": "An ICU-hour-level early warning model built on MIMIC-IV using hourly vital signs, labs, demographics, and multimorbidity phenotypes to predict sepsis onset 1–4 hours in advance. The project poster reports 94% sensitivity and 44% specificity.",
+    "displayTitle": "Sepsis Sentinel",
+    "summary": "Predicting ICU sepsis 1–4 hours before onset using MIMIC-IV data and multimorbidity context.",
+    "posterUrl": "pdf/DSC180B_Poster.pdf",
+    "posterLabel": "Open research poster (PDF)"
+  },
+  {
+    "title": "Analyzing Multimorbidity Patterns & Sepsis Outcomes in Critical Care",
+    "year": "2025",
+    "url": "projects/multimorbidity.html",
+    "image": "images/multimorbidity.png",
+    "description": "A report of replication study by applying latent class analysis to the MIMIC-III dataset, confirming the presence of distinct multimorbidity subgroups in ICU patients. These subgroups show clear differences in sepsis risk and clinical severity, highlighting their value for improving risk stratification in critical care.",
+    "displayTitle": "Multimorbidity & Sepsis",
+    "summary": "Exploring patterns of coexisting conditions and their relationship to sepsis outcomes in critical care.",
+    "posterUrl": "pdf/DSC_180B_Report.pdf",
+    "posterLabel": "Open research poster (PDF)"
+  },
+  {
+    "title": "Schrodinger's Mice - Interactive Data Visualization",
+    "year": "2025",
+    "url": "https://jefferson8868.github.io/Schrodinger-s-Mice/",
+    "image": "images/animation.GIF",
+    "description": "An interactive data visualization that explores the circadian rhythms of mice. Generate hyponthetical mouse movement within the unobserved box to represent possible trajectories.",
+    "displayTitle": "Schrödinger’s Mice",
+    "summary": "An interactive visualization exploring circadian rhythms and the possible paths of unobserved mice."
+  },
+  {
+    "title": "Mouse Circadian Rhythm Analysis",
+    "year": "2025",
+    "url": "https://orzzzzzn.github.io/Mouse-Circadian-Rhythm-Analysis/",
+    "image": "images/mouse.png",
+    "description": "An interactive data visualization that deploys a radial graph to explore the circadian rhythms of mice, aiming to answer two key questions: What is the relationship between temperature and activity? How does gender influence this relationship?",
+    "displayTitle": "Mouse Circadian Rhythms",
+    "summary": "Exploring how temperature and sex relate to mouse activity through interactive radial visualizations."
+  },
+  {
+    "title": "Bikewatching",
+    "year": "2025",
+    "image": "images/bikewatching.png",
+    "url": "https://orzzzzzn.github.io/bikewatching/",
+    "description": "An immersive, interactive map visualization of bike traffic in the Boston area during different times of the day.",
+    "displayTitle": "Bikewatching",
+    "summary": "An interactive map of Boston bike traffic, revealing how the city moves throughout the day."
+  },
+  {
+    "title": "Amazon Product Reviews Dataset Analysis",
+    "year": "2024",
+    "url": "https://docs.google.com/document/d/1rIhhnQYCZioL1QtNduhDfBJ-hzKJjzW6NMwtGGLronM/edit?usp=sharing",
+    "image": "images/amazon.png",
+    "description": "We used the Amazon Product Reviews (Amazon_Fashion category) 2023 dataset to create a machine learning model to predict product rateings, using features like, review text, helpfulness votes, item descriptions.",
+    "displayTitle": "Amazon Review Analysis",
+    "summary": "Predicting product ratings with machine learning, review text, helpfulness votes, and product descriptions."
+  },
+  {
+    "title": "Recipe Nutrition VS. Preparation Time & Steps",
+    "year": "2024",
+    "url": "https://ziyaozzz.github.io/dsc80_project4_html/",
+    "image": "images/dsc80.png",
+    "description": "This data science project for DSC80 at UCSD investigates the correlation between a recipe's rating and the percentage of total calories in the recipe that come from sugar.",
+    "displayTitle": "Recipes, Nutrition & Ratings",
+    "summary": "Investigating the relationship between recipe ratings and the proportion of calories that come from sugar."
+  },
+  {
+    "title": "Entertainment Design Portfolio",
+    "year": "2021",
+    "url": "https://docs.google.com/presentation/d/1aOYY8te7mVEtG-aEhGc90klSydSXL1MpAuayYUIOeCM/edit?usp=sharing",
+    "image": "images/portfolio_cover.png",
+    "description": "Digital design portfolio that consists of multiple character designs, environment designs, prop designs, and transportation designs under the same fantastical world view.",
+    "displayTitle": "Entertainment Design",
+    "summary": "Characters, environments, props, and vehicles designed for a shared fantastical world."
+  }
 ]

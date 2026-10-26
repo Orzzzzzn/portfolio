@@ -1,16 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="../style.css" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Analyzing Multimorbidity Patterns & Sepsis Outcomes in Critical Care</title>
+  <meta name="description" content="A replication study of multimorbidity patterns and sepsis outcomes in critical care using MIMIC-III.">
+  <title>Multimorbidity &amp; Sepsis — Yuxuan Zhou</title>
+  <link rel="stylesheet" href="../style.css">
 </head>
-<body>
-  <h1>Analyzing Multimorbidity Patterns & Sepsis Outcomes in Critical Care</h1>
-  <h2><a href="https://github.com/kshannon-ucsd/25fa-dsc180a-team2.git">Git Repository</a></h2>
-  <iframe src="../pdf/Analyzing Multimorbidity Patterns & Sepsis Outcomes in Critical Care.pdf" width="100%" height="800"></iframe>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.10.111/pdf.min.js"></script>
+<body class="inner-page">
+  <main class="page-main" id="main-content">
+    <header class="page-heading">
+      <a class="text-link" href="./">← All projects</a>
+      <p class="eyebrow">Critical care research · 2025</p>
+      <h1 class="page-title">Multimorbidity<br>&amp; sepsis outcomes.</h1>
+      <p class="page-description">Analyzing multimorbidity patterns and sepsis outcomes in critical care.</p>
+    </header>
+    <div class="article-layout">
+      <section class="surface article-body" aria-labelledby="study-overview">
+        <figure class="article-image">
+          <img src="../images/multimorbidity.png" alt="Visualization from the multimorbidity and sepsis outcomes study" loading="eager">
+        </figure>
+        <a class="button" href="../pdf/DSC_180B_Report.pdf" target="_blank" rel="noopener noreferrer">View full paper ↗</a>
+      </section>
+      
+      <section class="surface article-body" aria-labelledby="study-overview">
+        <h2 id="study-overview">Study overview</h2>
+        <p>This replication study applies latent class analysis to the MIMIC-III dataset to identify distinct multimorbidity subgroups among ICU patients.</p>
+        <p>The study found differences in sepsis risk and clinical severity across these subgroups, highlighting their potential value for improving risk stratification in critical care.</p>
+        <dl class="article-facts">
+          <div><dt>Year</dt><dd>2025</dd></div>
+          <div><dt>Dataset</dt><dd>MIMIC-III</dd></div>
+          <div><dt>Method</dt><dd>Latent class analysis</dd></div>
+          <div><dt>Focus</dt><dd>Multimorbidity and sepsis risk</dd></div>
+        </dl>
+        <a class="button" href="https://github.com/kshannon-ucsd/25fa-dsc180a-team2" target="_blank" rel="noopener noreferrer">View research repository ↗</a>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer"></footer>
+  <script type="module" src="../global.js"></script>
+  <script src="./pdf-viewer.js" defer></script>
 </body>
 </html>
