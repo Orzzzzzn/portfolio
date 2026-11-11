@@ -1,5 +1,14 @@
 [
   {
+    "title": "CampusLoop",
+    "year": "2026",
+    "url": "https://orzzzzzn.github.io/CampusLoop/",
+    "image": "images/CampusLoop.png",
+    "description": "CampusLoop is a student carpooling platform that uses intelligent ride matching, dynamic cost-sharing, and AI-powered assistance to make transportation more affordable and convenient.",
+    "displayTitle": "CampusLoop",
+    "summary": "CampusLoop connects students through smart ride matching and affordable carpooling."
+  },
+  {
     "title": "Early ICU Sepsis Prediction with SEPSIS SENTINEL MODEL",
     "year": "2026",
     "url": "https://orzzzzzn.github.io/DSC180B-website/",
