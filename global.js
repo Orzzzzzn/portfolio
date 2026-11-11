@@ -11,7 +11,7 @@ const pages = [
   { path: 'projects/', label: 'Projects' },
   { path: 'about/', label: 'About Me' },
   { path: 'cv/', label: 'CV' },
-  { path: 'https://github.com/kyxz1813', label: 'GitHub', external: true },
+  { path: 'https://github.com/Orzzzzzn', label: 'GitHub', external: true },
 ];
 for (const page of pages) {
   const link = document.createElement('a');
